@@ -1,0 +1,20 @@
+.searchBar{
+margin: 10px;
+}
+
+.searchBar input{
+    border: none;
+}
+
+.searchBar button{
+    color: #dfbcff;
+    background: #985ecf;
+    border: none;
+    height: 100%;
+    transition: 0.5s;
+}
+
+.searchBar button:hover{
+    cursor: pointer;
+    background: #be91e7;
+}

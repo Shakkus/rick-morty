@@ -1,0 +1,52 @@
+.cards .card-container{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.card{
+    background: #ba7cf5;
+    width: 300px;
+    margin: 30px;
+}
+
+.card .btns-card{
+    background: #ba7cf5;
+    display: flex;
+    justify-content: space-between
+}
+
+.btns-card:hover{
+    cursor:pointer;
+    background: #ba7cf5;
+    display: flex;
+    justify-content: space-between
+}
+
+
+.btns-card .like{
+    background: #f57ccd;
+    padding-right: 42%;
+    border: none;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.btns-card .close{
+    background: #bd0101;
+    padding-right: 45%;
+    border: none;
+}
+
+
+.card NavLink{
+    text-decoration: none;
+}
+.card h2{
+    text-align: center;
+    background: #ba7cf5;
+}
+
+.card img{
+    width: 300px;
+}

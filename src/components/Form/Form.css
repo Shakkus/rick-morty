@@ -1,0 +1,44 @@
+h2{
+    color: white;
+    background: rgb(157, 157, 252);
+}
+
+.login-container{
+    background: rgb(157, 157, 252);
+    padding: 50px;
+    width: 350px;
+    height: 80vh;
+    display: block;
+}
+
+form{
+    background: rgb(157, 157, 252);
+}
+
+.user-container{
+    background: rgb(157, 157, 252);
+    color:white;
+    padding: 20px;
+}
+
+.user-container label{
+    background: rgb(157, 157, 252);
+}
+
+.pass-container{
+    background: rgb(157, 157, 252);
+    padding: 20px;
+    color: white;
+}
+
+.pass-container label{
+    background: rgb(157, 157, 252);
+}
+
+.btn-submit{
+    width: 100%;
+    color: white;
+    border: none;
+    padding: 10px;
+    background: rgb(143, 143, 240);
+}

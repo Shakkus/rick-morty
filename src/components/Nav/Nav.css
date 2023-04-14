@@ -1,0 +1,38 @@
+.nav{
+    background: #ba7cf5;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+.btns{
+   background: #ba7cf5;
+   display: flex;
+   text-decoration: none;
+}
+.btns a{
+    text-decoration: none;
+    padding: 10px;
+    margin: 10px;
+    color: #ba7cf5;
+    transition: 0.5s;
+}
+
+.btns a:hover{
+    cursor: pointer;
+    color: #dfbcff;
+    background: #985ecf;
+}
+
+.logout{
+    padding: 10px;
+    margin:10px;
+    border: none;
+    color: #ba7cf5;
+    transition: 0.5s;
+}
+
+.logout:hover{
+    cursor: pointer;
+    color: #dfbcff;
+    background: #985ecf;
+}
