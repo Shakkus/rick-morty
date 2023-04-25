@@ -7,7 +7,7 @@ const getCharById = (req,res) => {
 
     axios(`${URL}/${+id}`) //Por default hace get
     .then(response => response.data)
-    .then(({status,name,species,origin,image,gender}) => {
+    .then(({name,species,origin,image,gender}) => {cd
         if (name) {
             const character = {
                 id,
@@ -26,7 +26,4 @@ const getCharById = (req,res) => {
     
 }
 
-module.exports = {
-    getCharById,
-
-}
+module.exports = {getCharById}
