@@ -2,12 +2,15 @@ import { NavLink } from 'react-router-dom'
 import { addFav,removeFav } from '../../redux/actions/actions';
 import { connect } from 'react-redux';
 import { useState,useEffect } from 'react';
+import { useDispatch, useSelector } from "react-redux";
 
 import './Card.css'
 
-const Card = ({id,name,species,gender,origin,image,onClose,addFav,removeFav,myFavorites}) => {
+const Card = ({id,name,species,gender,origin,image,onClose}) => {
 
    const [isFav,setIsFav] = useState(false);
+   const dispatch = useDispatch();
+   const myFavorites = useSelector(state => state.allCharactersFav)
 
    const handleFavorite = () => {
       if (isFav) {
@@ -18,6 +21,10 @@ const Card = ({id,name,species,gender,origin,image,onClose,addFav,removeFav,myFa
          addFav({id,name,species,gender,origin,image})
       }
    }
+
+   useEffect(()=>{
+      dispatch(addFav);
+   }, [dispatch])
 
    useEffect(() => {
       myFavorites.forEach((fav) => {

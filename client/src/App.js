@@ -17,8 +17,7 @@ const email = 'seba@gmail.com'
 const pass = '1234'
 
 //DATOS API
-const API_URL = 'https://be-a-rym.up.railway.app/api/character/'
-const API_KEY = '0475e7135bff.227d223eb6ebd07c9f43'
+const URL_LOGIN = 'http://localhost:3001/rickandmorty/login/'
 
 function App() {
    
@@ -27,25 +26,33 @@ function App() {
    const navigate = useNavigate();
    const [access,setAccess] = useState(false);
 
-   const login = (userData) => {
-      if (userData.email === email && userData.password === pass) {
-         setAccess(true);
-         navigate('/home')
-      }   
-   }
 
-   useEffect(()=> {
-      !access && navigate('/')
-   },[access]) //recordar que debe ir con su array de dependencia
+   // const login = async (userData) => {
+   //    try {
+   //       const { email, password } = userData;
+   //       const {data} = await axios(URL + `?email=${email}&password=${password}`)
+   //       const { access } = data;
 
-   const onSearch = (id) => {
-      axios(`http://localhost:3001/rick_and_morty/character/${id}`)
-         .then(response => response.data)
-         .then((data) => {
-            if (data.name) setCharacters((oldChars) => [...oldChars, data]) 
-            else window.alert('¡No hay personajes con este ID!');
-         });
-   }
+   //       setAccess(data);
+   //       access && navigate('/ho me');
+   //    } catch (error) {
+   //       console.log(error.message);
+   //    }      
+   // }
+
+   // useEffect(()=> {
+   //    !access && navigate('/')
+   // },[access]) //recordar que debe ir con su array de dependencia
+
+   const onSearch = async (id) => {
+      try {
+         const {data} = await axios(`http://localhost:3001/rick_and_morty/character/${id}`)
+
+         if (data.name) setCharacters((oldChars) => [...oldChars, data]);
+      } catch (error) {
+         window.alert('¡No hay personajes con este ID!');
+      }}
+      
 
    const onClose = (id) => {
       const charactersFiltered = characters.filter(character =>
@@ -65,7 +72,7 @@ function App() {
          }
 
          <Routes className='links'>
-            <Route path='/' element={<Form login={login} />}/>
+            {/* <Route path='/' element={<Form login={login} />}/> */}
             <Route path='/home' element={<Cards characters={characters} onClose={onClose} key={characters.id}/>}/>
             <Route path='/about' element={<About />}/>
             <Route path='/detail/:id' element={<Detail />}/>

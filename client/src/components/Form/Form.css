@@ -41,4 +41,5 @@ form{
     border: none;
     padding: 10px;
     background: rgb(143, 143, 240);
+    cursor: pointer;
 }
